@@ -15,15 +15,24 @@ app.get('/menu', (req, res) => {
     { name: 'steak', price: 38, image: 'menu6.jpg' },
     { name: 'pizza', price: 45, image: 'menu7.jpg' },
     { name: 'fish', price: 33,image: 'menu8.jpg' },
-    { name: 'ribeye', price: 46, image: 'menu9.jpg' },
+    { name: 'ribeye', price: 46, image: 'menu9.jpg' }
   ];
-
   res.render('menu', { menus });
 });
 
 app.get('/home', (req, res) => {
   const home = {name: 'hero', image: 'hero.jpg'}
   res.render('home', {home});
+});
+
+app.get('/about', (req, res) => {
+  const abouts = [
+    {name: 'food', image: 'food.jpg'},
+    {name: 'food', image: 'food1.jpg'},
+    {name: 'food', image: 'food2.jpg'},
+    {name: 'food', image: 'food3.jpg'}
+];
+  res.render('about', {abouts});
 });
 
 app.listen(port, () => {

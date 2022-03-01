@@ -1,0 +1,9 @@
+extends ./layout.pug
+block content
+    h2 About Us
+    p ‘Restaurant name’ Restaurants are well known with a substantial gathering of people including families, kids, seniors, and business experts.
+    p Our benevolent condition is perfect for praising unique events, facilitating a business lunch, or assembling for a flavorful dinner with loved ones.
+    each about in abouts
+        div.about-container
+            a(href='/abouts/')
+                img.abouts-image(src='/img/' + about.image)
