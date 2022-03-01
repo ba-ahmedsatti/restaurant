@@ -23,7 +23,7 @@ app.get('/menu', (req, res) => {
 
 app.get('/home', (req, res) => {
   const home = {name: 'hero', image: 'hero.jpg'}
-  res.render('home')
+  res.render('home', {home});
 });
 
 app.listen(port, () => {
