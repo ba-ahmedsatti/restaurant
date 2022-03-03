@@ -35,6 +35,12 @@ app.get('/about', (req, res) => {
   res.render('about', {abouts});
 });
 
+app.get('/reservation', (req, res) => {
+  const reservation = 'reservartion page';
+  res.render('reservation', {reservation});
+});
+
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

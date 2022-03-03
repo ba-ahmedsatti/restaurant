@@ -4,6 +4,5 @@ block content
     p ‘Restaurant name’ menu offers a large variety of food and pizzas to satisfy all tastes. We are committed to providing our guests with the most flavorful and freshest food. Visit us and treat yourself to our pleasant and appetizing food.
     each menu in menus
         div.menu-container
-            a(href='/menus/')
                 img.menus-image(src='/img/' + menu.image)
                 h3= menu.name + ' ' + menu.price
