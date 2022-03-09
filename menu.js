@@ -40,6 +40,10 @@ app.get('/reservation', (req, res) => {
   res.render('reservation', {reservation});
 });
 
+app.get('/contact', (req, res) => {
+  const contact = 'contact page';
+  res.render('contact', {contact});
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
