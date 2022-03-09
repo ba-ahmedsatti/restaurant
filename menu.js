@@ -36,12 +36,12 @@ app.get('/about', (req, res) => {
 });
 
 app.get('/reservation', (req, res) => {
-  const reservation = 'reservartion page';
+  const reservation = 'reservartion';
   res.render('reservation', {reservation});
 });
 
 app.get('/contact', (req, res) => {
-  const contact = 'contact page';
+  const contact = 'contact';
   res.render('contact', {contact});
 });
 
