@@ -48,7 +48,11 @@ app.get('/about', (req, res) => {
 
 app.get('/reservation', (req, res) => {
   const reservation = 'reservartion';
-  res.render('reservation', {reservation});
+  res.render('reservation');
+});
+app.get('/reserve', (req, res) => {
+  const reserve = 'reserve';
+  res.render('reserve');
 });
 
 app.get('/contact', (req, res) => {

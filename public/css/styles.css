@@ -2,7 +2,7 @@
 
 * {
   font-family: "Nunito", sans-serif;
-  margin: 0;
+  margin: 9;
   padding: 0;
   box-sizing: border-box;
   outline: none;
@@ -41,4 +41,58 @@ body {
   justify-content: center;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.reserve-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 200px;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 40px;
+}
+
+.reserve-container {
+  padding: 10px;
+}
+
+.reserve-container {
+  padding: 10px;
+}
+
+.reserve-container input[type="text"],
+.reserve-container input[type="file"] {
+  font-size: 16px;
+  padding: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.reserve-container button,
+.reserve-container textarea {
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+textarea {
+  min-height: 8em;
+}
+
+button {
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form > * {
+  margin: 24px;
 }

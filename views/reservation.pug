@@ -1,5 +1,19 @@
 extends ./layout.pug
 block content
+    div 
+        a(href='/') Back
     h2 Reserve Your Table
     p Make A Reservation. Your table is waiting, so are we, when can we expect you?  CONTACT US NOW !
     p Come visit ‘Restaurant Name’
+    .reserve-container
+        form(action='/reserve' method='post' enctype="multipart/form-data")
+            input(type='text', placeholder='Enter your name' required='required', name='name')
+            input(type='text', placeholder='Enter your email' required='required', name='email')
+            input(type='text', placeholder='Your phone number' required='required', name='phone')
+            input(type='text', placeholder='Number of indivisuals' required='required', name='howMany')
+            input(type='text', placeholder='Date' required='required', name='date')
+            input(type='text', placeholder='Time' required='required', name='time')
+            textarea(placeholder='Your message' required='required', name='comments')
+        .buttons
+            button#Reserve Reserve
+            button#Cancel Cancel
