@@ -1,6 +1,10 @@
 {
   "dependencies": {
+    "body-parser": "^1.19.2",
     "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.8",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15",
     "pug": "^3.0.2"
   },
@@ -8,13 +12,12 @@
   "version": "1.0.0",
   "main": "menu.js",
   "scripts": {
-    "start": "nodemon",
+    "start": "nodemon menu.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ba-ahmedsatti/restaurant-project.git"

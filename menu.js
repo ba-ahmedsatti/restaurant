@@ -1,6 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const multer = require('multer');
+const MongoClient = require('mongodb').MongoClient;
+
 const app = express();
-const port = 8002;
+const port = 8003;
+const url = 'mongodb://localhost:27017';
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 
 app.set('view engine', 'pug');
 
