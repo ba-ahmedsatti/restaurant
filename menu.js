@@ -52,6 +52,13 @@ app.get('/contact', (req, res) => {
   res.render('contact', {contact});
 });
 
+app.use(function(req, res, next) {
+  res.status(404);
+
+  res.render('404');
+  return;
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
