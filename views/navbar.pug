@@ -1,5 +1,6 @@
 mixin navbar(tabs, currentTab)
-  each tab in tabs
-    div.tab-container
-      a(href='/tab/' + tab) #{tab}
+  div.tab-container
+    each tab in tabs
+      div.tab-item 
+        a(href='/' + tab) #{tab}  
   div= currentTab

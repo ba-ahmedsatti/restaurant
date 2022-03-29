@@ -31,7 +31,7 @@ app.get('/menu', (req, res) => {
   res.render('menu', { menus });
 });
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
   const home = {name: 'hero', image: 'hero.jpg'}
   res.render('home', {home});
 });

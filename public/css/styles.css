@@ -96,3 +96,12 @@ form {
 form > * {
   margin: 24px;
 }
+
+.tab-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tab-item {
+  padding-right: 20px;
+}
