@@ -6,7 +6,7 @@ block content
     p Make A Reservation. Your table is waiting, so are we, when can we expect you?  CONTACT US NOW !
     p Come visit ‘Restaurant Name’
     .reserve-container
-        form(action='/reserve' method='post' enctype="multipart/form-data")
+        form(action='/reserve' method='post')
             input(type='text', placeholder='Enter your name' required='required', name='name')
             input(type='text', placeholder='Enter your email' required='required', name='email')
             input(type='text', placeholder='Your phone number' required='required', name='phone')

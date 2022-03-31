@@ -50,9 +50,10 @@ app.get('/reservation', (req, res) => {
   const reservation = 'reservartion';
   res.render('reservation');
 });
+
 app.get('/reserve', (req, res) => {
   const reserve = 'reserve';
-  res.render('reserve');
+  res.render('reserve', {reserve});
 });
 
 app.get('/contact', (req, res) => {
