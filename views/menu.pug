@@ -1,4 +1,5 @@
 extends ./layout.pug
+
 block content
     div
         a(href='/') Back
@@ -6,5 +7,5 @@ block content
     p ‘Restaurant name’ menu offers a large variety of food and pizzas to satisfy all tastes. We are committed to providing our guests with the most flavorful and freshest food. Visit us and treat yourself to our pleasant and appetizing food.
     each menu in menus
         div.menus-container
-                img.menus-image(src='/img/' + menu.image)
+                img.menus-image(src='/img/' + menu.image || '/public/' + superhero.image)
                 h3= menu.name + ' ' + menu.price
