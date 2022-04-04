@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
+const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
@@ -16,6 +17,11 @@ app.listen(port, () => {
 });
 
 app.use(express.static('public'));
+
+app.use(cors({
+  origin: '*'
+}));
+
 
 app.get('/menu', (req, res) => {
   const menus = [
