@@ -7,4 +7,4 @@ const aboutSchema = new mongoose.Schema({
   image: String
 
 });
-module.exports = mongoose.model("about", aboutSchema);
+module.exports = mongoose.model("About", aboutSchema);

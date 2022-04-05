@@ -10,6 +10,9 @@ const mongoose = require('mongoose');
 // import menu schema
 const Menu = require('./schema/menu.model')
 
+// import About schema
+const About = require('./schema/about.model')
+
 const app = express();
 const port = 8080;
 
@@ -75,6 +78,7 @@ app.get('/about', async (req, res) => {
   const abouts = await About.find();
   res.render('about', { abouts })
 });
+
 
 app.get('/menu/:menuId', (req, res) => {
   res.render('menus', { menu: documents.find(menu => menu.id === req.params.menuId)})
