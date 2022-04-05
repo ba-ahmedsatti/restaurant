@@ -46,24 +46,36 @@ app.get('/', (req, res) => {
   });
 });
 
+
 app.get('/menu/:menuId', (req, res) => {
   res.render('menus', { menu: documents.find(menu => menu.id === req.params.menuId)})
 });
+
 
 app.get('/home', (req, res) => {
   const home = {name: 'hero', image: 'hero.jpg'}
   res.render('home', {home});
 });
 
-app.get('/about', (req, res) => {
-  const abouts = [
-    {name: 'food', image: 'food.jpg'},
-    {name: 'food', image: 'food1.jpg'},
-    {name: 'food', image: 'food2.jpg'},
-    {name: 'food', image: 'food3.jpg'}
+const abouts = [
+  {name: 'food', image: 'food.jpg'},
+  {name: 'food', image: 'food1.jpg'},
+  {name: 'food', image: 'food2.jpg'},
+  {name: 'food', image: 'food3.jpg'}
 ];
-  res.render('about', {abouts});
+
+  
+app.get('/', (req, res) => {
+  MongoClient.connect(url, function(err, client) {
+    const db = client.db('abouts');
+    const collection = db.collection('about');
+    collection.find({}).toArray((error, documents) => {
+      client.close();
+      res.render('about', {abouts: documents});
+    })
+  });
 });
+
 
 app.get('/reservation', (req, res) => {
   const reservation = 'reservartion';
