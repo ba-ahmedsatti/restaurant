@@ -72,7 +72,7 @@ app.get('/menu', async (req, res) => {
 });
 
 app.get('/about', async (req, res) => {
-  const abouts = await abouts.find();
+  const abouts = await About.find();
   res.render('about', { abouts })
 });
 
