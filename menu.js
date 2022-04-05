@@ -2,11 +2,26 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const cors = require('cors');
-const MongoClient = require('mongodb').MongoClient;
+// delete no use import
+// const MongoClient = require('mongodb').MongoClient;
+
+// import mongoose
+const mongoose = require('mongoose');
+// import menu schema
+const Menu = require('./schema/menu.model')
 
 const app = express();
 const port = 8080;
-const url = 'mongodb://localhost:27017';
+
+// set db url, db name food
+const DB_URL = 'mongodb://localhost:27017/food';
+
+// connect to mongodb
+mongoose.connect(DB_URL, { useNewUrlParser: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error'));
+
+
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
@@ -35,15 +50,12 @@ const menus = [
   { id: 8, name: 'ribeye', price: 46, image: 'menu9.jpg' },
 ]
 
-app.get('/', (req, res) => {
-  MongoClient.connect(url, function(err, client) {
-    const db = client.db('menus');
-    const collection = db.collection('menu');
-    collection.find({}).toArray((error, documents) => {
-      client.close();
-      res.render('menu', {menus: documents});
-    })
-  });
+// rewrite '/' route for mongodb example
+app.get('/', async (req, res) => {
+  // get all menu data from menus collection
+  const data = await Menu.find();
+  // log data
+  console.log(data)
 });
 
 
@@ -64,17 +76,18 @@ const abouts = [
   {name: 'food', image: 'food3.jpg'}
 ];
 
-  
-app.get('/', (req, res) => {
-  MongoClient.connect(url, function(err, client) {
-    const db = client.db('abouts');
-    const collection = db.collection('about');
-    collection.find({}).toArray((error, documents) => {
-      client.close();
-      res.render('about', {abouts: documents});
-    })
-  });
-});
+
+// delete redundant route for '/'
+// app.get('/', (req, res) => {
+//   MongoClient.connect(url, function(err, client) {
+//     const db = client.db('abouts');
+//     const collection = db.collection('about');
+//     collection.find({}).toArray((error, documents) => {
+//       client.close();
+//       res.render('about', {abouts: documents});
+//     })
+//   });
+// });
 
 
 app.get('/reservation', (req, res) => {
