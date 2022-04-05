@@ -46,33 +46,35 @@ app.use(cors({
 
 
 
-const menus = [
-  { id: 1, name: 'burger', price: 49, image: 'menu.jpg' },
-  { id: 2, name: 'salad', price: 39, image: 'menu1.jpg' },
-  { id: 3, name: 'shrimp', price: 30, image: 'menu3.jpg' },
-  { id: 4, name: 'pasta', price: 40, image: 'menu4.jpg' },
-  { id: 5, name: 'steak', price: 38, image: 'menu6.jpg' },
-  { id: 6, name: 'pizza', price: 45, image: 'menu7.jpg' },
-  { id: 7, name: 'fish', price: 33,image: 'menu8.jpg' },
-  { id: 8, name: 'ribeye', price: 46, image: 'menu9.jpg' },
-]
+// const menus = [
+//   { id: 1, name: 'burger', price: 49, image: 'menu.jpg' },
+//   { id: 2, name: 'salad', price: 39, image: 'menu1.jpg' },
+//   { id: 3, name: 'shrimp', price: 30, image: 'menu3.jpg' },
+//   { id: 4, name: 'pasta', price: 40, image: 'menu4.jpg' },
+//   { id: 5, name: 'steak', price: 38, image: 'menu6.jpg' },
+//   { id: 6, name: 'pizza', price: 45, image: 'menu7.jpg' },
+//   { id: 7, name: 'fish', price: 33,image: 'menu8.jpg' },
+//   { id: 8, name: 'ribeye', price: 46, image: 'menu9.jpg' },
+// ]
 
-// rewrite '/' route for mongodb example
+
+
+// // rewrite '/' route for mongodb example
 // app.get('/menu', async (req, res) => {
 //   // get all menu data from menus collection
 //   const data = await menus.find();
-//   // log data
-//   // console.log(data)
+//   res.render('menu', { data })
 // });
 
-app.get('/menu', (req, res) => {
+app.get('/menu', async (req, res) => {
+  const menus = await Menu.find();
   res.render('menu', { menus})
 });
 
-app.get('/about', (req, res) => {
-  res.render('menu', { abouts})
+app.get('/about', async (req, res) => {
+  const abouts = await about.find();
+  res.render('about', { abouts })
 });
-
 
 app.get('/menu/:menuId', (req, res) => {
   res.render('menus', { menu: documents.find(menu => menu.id === req.params.menuId)})
@@ -84,12 +86,12 @@ app.get('/home', (req, res) => {
   res.render('home', {home});
 });
 
-const abouts = [
-  {name: 'food', image: 'food.jpg'},
-  {name: 'food', image: 'food1.jpg'},
-  {name: 'food', image: 'food2.jpg'},
-  {name: 'food', image: 'food3.jpg'}
-];
+// const abouts = [
+//   {name: 'food', image: 'food.jpg'},
+//   {name: 'food', image: 'food1.jpg'},
+//   {name: 'food', image: 'food2.jpg'},
+//   {name: 'food', image: 'food3.jpg'}
+// ];
 
 
 // delete redundant route for '/'
