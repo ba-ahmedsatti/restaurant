@@ -16,11 +16,18 @@ const port = 8080;
 // set db url, db name food
 const DB_URL = 'mongodb://localhost:27017/food';
 
+
 // connect to mongodb
 mongoose.connect(DB_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error'));
 
+
+// const DB_URL1 = 'mongodb://localhost:27017/about';
+
+// mongoose.connect(DB_URL1, { useNewUrlParser: true });
+// const db1 = mongoose.connection;
+// db1.on('error', console.error.bind(console, 'MongoDB connection error'));
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
@@ -51,11 +58,19 @@ const menus = [
 ]
 
 // rewrite '/' route for mongodb example
-app.get('/', async (req, res) => {
-  // get all menu data from menus collection
-  const data = await Menu.find();
-  // log data
-  console.log(data)
+// app.get('/menu', async (req, res) => {
+//   // get all menu data from menus collection
+//   const data = await menus.find();
+//   // log data
+//   // console.log(data)
+// });
+
+app.get('/menu', (req, res) => {
+  res.render('menu', { menus})
+});
+
+app.get('/about', (req, res) => {
+  res.render('menu', { abouts})
 });
 
 
