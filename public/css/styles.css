@@ -130,13 +130,14 @@ nav{
   color: rgb(215, 52, 185);
   font-weight: bold;
   margin-left: 100px;
+}
 
-/* a{
+a{
   text-decoration: none;
   color: #f3f3f3;
   font-size: 18px;
   transition: 0.3s all ease;
-} */
+}
 
 ul{
   margin: 0px;
