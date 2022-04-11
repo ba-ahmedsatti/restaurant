@@ -96,7 +96,7 @@ button {
 
 button:hover {
   background: black;
-  color: rgb(215, 52, 185);
+  color: white;
 }
 
 form {
@@ -127,16 +127,18 @@ nav{
 
 .logo a{
   font-size: 39px;
-  color: rgb(215, 52, 185);
+  color: white;
   font-weight: bold;
   margin-left: 100px;
 }
 
 a{
   text-decoration: none;
-  color: #f3f3f3;
-  font-size: 18px;
+  color: black;
   transition: 0.3s all ease;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 100px;
 }
 
 ul{
@@ -151,15 +153,18 @@ ul li{
 }
 
 ul li a:hover{
-  color: rgb(215, 52, 185);
+  color: while;
 }
 
 .home-container{
+  font-size: 16px;
+  padding: 5px;
+  margin-left: 10px;
   background-image: url('../img/hero.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100vh
 }
 
 .content{
